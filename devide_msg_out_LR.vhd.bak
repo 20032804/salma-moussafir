@@ -1,0 +1,29 @@
+Library ieee ;
+use ieee.std_logic_1164.all;
+
+entity devide_msg_out_LR is 
+ port ( msg_out : in std_logic_vector(15 downto 1);
+        permut_msg_L : out std_logic_vector(14 downto 7);
+		  permut_msg_R : out std_logic_vector(6 downto 0));
+end devide_msg_out_LR ; 
+
+architecture code of devide_msg_out_LR is 
+signal permut_msg <= permut_msg_R & permut_msg_L; 
+begin 
+
+ msg_out(1)<= permut_msg(2);
+ msg_out(2)<= permut_msg(2);
+ msg_out(3)<= permut_msg(2);
+ msg_out(4)<= permut_msg(2);
+ msg_out(5)<= permut_msg(2);
+ msg_out(6)<= permut_msg(2);
+ msg_out(7)<= permut_msg(2);
+ msg_out(8)<= permut_msg(2);
+ msg_out(9)<= permut_msg(2);
+ msg_out(10)<= permut_msg(2);
+ msg_out(11)<= permut_msg(2);
+ msg_out(12)<= permut_msg(2);
+ msg_out(13)<= permut_msg(2);
+ msg_out(14)<= permut_msg(2);
+ 
+ end code ; 

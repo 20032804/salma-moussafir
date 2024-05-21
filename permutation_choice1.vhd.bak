@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity permutation_choice1 is
+    port (
+        inp    : in  std_logic_vector(14 downto 0);
+        outp   : out std_logic_vector(14 downto 0)
+    );
+end entity permutation_choice1;
+
+architecture code of permutation_choice1 is
+
+    -- Table de permutation initiale
+    constant permutation_choice1_table: std_logic_vector(14 downto 0) := (
+        9, 10, 12, 3, 6, 8, 11, 2,13, 5, 14, 1, 4, 7, 15
+    );
+
+begin
+
+    process(inp)
+    begin
+        if rising_edge(inp) then 
+            for i in 0 to 14 loop
+                outp(i) <= inp(to_integer(unsigned(permutation_choice1_table(i))));
+            end loop;
+        end if;
+    end process;
+
+end code;
